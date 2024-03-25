@@ -1,0 +1,10 @@
+h1{
+    background-color: darkgray;
+    border-color: blue;
+    text-align: center;
+    padding: 15px 10px 15px 10px;
+    border-radius: 25px;
+    border-style: solid;
+    color: black;
+    font-size: 46px;
+}
