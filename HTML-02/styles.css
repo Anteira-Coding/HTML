@@ -13,3 +13,17 @@ p {
     display: inline-block;
     margin-left: 30px;
 }
+ul {
+    list-style-type: disc;
+    color: blueviolet;
+}
+ol {
+    color: #b92154;
+    list-style:upper-roman;
+}
+table {
+    border: solid black;
+    background-color: lightgray;
+    text-align: justify; 
+    
+}
