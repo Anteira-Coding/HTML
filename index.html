@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .calculator {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 1fr 4fr 1fr 1fr 1fr;
+      gap: 5px;
+      width: 200px;
+      height: 300px;
+      margin: 0 auto;
+      font-size: 20px;
+    }
+    .button {
+      background-color: #ddd;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+    }
+    .button:hover {
+      background-color: #eee;
+    }
+    .button:active {
+      background-color: #fff;
+    }
+    .zero {
+      grid-column: 1 / 3;
+    }
+    .clear {
+      grid-column: 4;
+    }
+    .equals {
+      grid-column: 3;
+      grid-row: 4 / 6;
+    }
+    .operations {
+      grid-column: 4;
+      grid-row: 1 / 3;
+    }
+    .square-root {
+      grid-column: 3;
+      grid-row: 3 / 5;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Calculator</h2>
+
+<div class="calculator">
+  <input type="text" id="result" value="0" class="button" readonly>
+  <button class="button clear" onclick="clearDisplay()">Clear</button>
+  <button class="button" onclick="appendNumber(7)">7</button>
+  <button class="button" onclick="appendNumber(8)">8</button>
+  <button class="button" onclick="appendNumber(9)">9</button>
+  <button class="button operations" onclick="performOperation('+')">+</button>
+  <button class="button" onclick="appendNumber(4)">4</button>
+  <button class="button" onclick="appendNumber(5)">5</button>
+  <button class="button" onclick="appendNumber(6)">6</button>
+  <button class="button operations" onclick="performOperation('-')">-</button>
+  <button class="button" onclick="appendNumber(1)">1</button>
+  <button class="button" onclick="appendNumber(2)">2</button>
+  <button class="button" onclick="appendNumber(3)">3</button>
+  <button class="button operations" onclick="performOperation('*')">*</button>
+  <button class="button zero" onclick="appendNumber(0)">0</button>
+  <button class="button" onclick="appendNumber('.')">.</button>
+  <button class="button operations" onclick="calculateResult()">=</button>
+  <button class="button operations square-root" onclick="calculateSquareRoot()">√</button>
+  <button class="button operations" onclick="performOperation('/')">/</button>
+  <button class="button operations" onclick="performOperation('%')">%</button>
+</div>
+
+<script>
+let operand1 = 0;
+let operand2 = null;
+let operation = null;
+let result = 0;
+
+function appendNumber(number) {
+  if (operand2 === null) {
+    operand1 = operand1 * 10 + number;
+    document.getElementById("result").value = operand1;
+  } else {
+    operand2 = operand2 * 10 + number;
+    document.getElementById("result").value = operand2;
+  }
+}
+
+function performOperation(op) {
+  if (operand2 !== null) calculateResult();
+  operation = op;
+}
+
+function calculateSquareRoot() {
+  operand1 = Math.sqrt(operand1);
+  document.getElementById("result").value = operand1;
+}
+
+function calculateResult() {
+  if (operand2 !== null) {
+    let calculation = operand1;
+    switch (operation) {
+      case '+':
+        calculation += operand2;
+        break;
+      case '-':
+        calculation -= operand2;
+        break;
+      case '*':
+        calculation *= operand2;
+        break;
+      case '/':
+        if (operand2 != 0) calculation /= operand2;
+        else alert("Cannot divide by zero");
+        break;
+      case '%':
+        calculation %= operand2;
+        break;
+    }
+    result = calculation;
+    operand1 = result;
+    operand2 = null;
+    operation = null;
+    document.getElementById("result").value = result;
+  }
+}
+
+function clearDisplay() {
+  operand1 = 0;
+  operand2 = null;
+  operation = null;
+  result = 0;
+  document.getElementById("result").value = 0;
+}
+</script>
+
+</body>
+</html>
