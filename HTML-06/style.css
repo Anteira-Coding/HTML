@@ -1,0 +1,29 @@
+header {
+    text-align: center;
+    font-size: 3.6rem;
+    margin: 1.15rem;
+    padding: 1.15rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: crimson;
+}
+
+body {
+    background-color: #f0f8ff;
+}
+
+button {
+    border-radius: 8px;
+    font-size: 32px;
+}
+.clear {
+    padding: 10px 90px;
+    border: 2px solid salmon;
+    background-color: black;
+    color: red;
+}
+.plus {
+    padding: 30px 10px;
+}
+.first .second .third {
+    padding: 10px 10px;
+}

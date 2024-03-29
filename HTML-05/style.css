@@ -15,3 +15,27 @@ audio {
     margin: 25px;
     padding: 25px;
 }
+video {
+    border-radius: 50px;
+    border-color: aqua;
+    border-style: solid;
+}
+button {
+    border-radius: 8px;
+    color: black;
+    background-color: whitesmoke;
+   
+}
+button:hover {
+    background-color: black;
+    color: tomato;
+    padding: 10px;
+    margin: 10x;
+    display: inline-block;
+    font-size: 32px;
+    cursor: pointer;
+}
+button:active {
+    background-color: black;
+    color: blue;
+}
