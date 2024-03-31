@@ -14,9 +14,10 @@ body {
 button {
     border-radius: 8px;
     font-size: 32px;
+    margin: 5px;
 }
 .clear {
-    padding: 10px 90px;
+    padding: 10px 100px;
     border: 2px solid salmon;
     background-color: black;
     color: red;
@@ -26,4 +27,16 @@ button {
 }
 .first .second .third {
     padding: 10px 30px;
+}
+.one,.two ,.three ,.four,.five ,.six ,.seven ,.eight ,.nine {
+    padding: 10px 34px;
+}
+.dZero,.tZero {
+    padding: 10px 42px;
+}
+.zero, .dot,.equal {
+    padding: 10px 34px;
+}
+.percentage, .squareRoot, .multiple, .divide, .minus {
+    padding: 10px 20px;
 }
